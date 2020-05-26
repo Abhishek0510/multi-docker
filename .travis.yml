@@ -11,10 +11,10 @@ script:
   - docker run -e CI=true abhishek/react-test npm run test -- --coverage
 
 after_success:
-  - docker build -t abhishek/multi-client ./client
-  - docker build -t abhishek/multi-nginx ./nginx
-  - docker build -t abhishek/multi-server ./server
-  - docker build -t abhishek/multi-worker ./worker
+  - docker build -t abhi0510/abhishek/multi-client ./client
+  - docker build -t abhi0510/abhishek/multi-nginx ./nginx
+  - docker build -t abhi0510/abhishek/multi-server ./server
+  - docker build -t abhi0510/abhishek/multi-worker ./worker
   #LOG IN DOCKER CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push abhi0510/abhishek/multi-client
